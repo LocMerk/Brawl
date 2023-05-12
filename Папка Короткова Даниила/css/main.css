@@ -1,0 +1,125 @@
+body{
+    padding: 0;
+    margin: 0 300px;
+    font-family: 'Montserrat', sans-serif;
+}
+.header{
+    margin-top: 10px;
+}
+.header-ul{
+    text-decoration: none;
+    list-style: none;
+    color: #000;
+    float: right;
+    margin-top: -40px;
+}
+.header-li{
+    display: inline-block;
+    text-decoration: none;
+    list-style: none;
+    color: #000;
+    margin-left: 15px;
+}
+.header-link{
+    text-decoration: none;
+    list-style: none;
+    color: #000;
+    font-weight: 500;
+}
+.header-link:hover{
+    transition: 0.1s all ease;
+    color: #5869FF;
+}
+.main-img__bloger{
+    width: 100%;
+    height: 453px;
+}
+.section-info{
+    margin-top: 20px;
+}
+.section-img{
+    width: 100%;
+    filter: brightness(20%);
+    z-index: 111;
+}
+.info-text{
+    display: inline-block;
+    z-index: 12;
+    padding-top: 150px;
+    padding-left: 120px;
+    position: absolute;
+}
+.info-text__header{
+    color: #fff;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.info-text__subheader{
+    color: #fff;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+}
+.header-link_feedback{
+    padding: 7px 9px;
+    background-color: #5869FF;
+    color: #fff;
+}
+.header-link_feedback:hover{
+    transition: 0.1s all ease;
+    color: #FFF;
+} 
+.card{
+    width: 185px;
+    height: 102px;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.5);
+    margin-right: 50px;
+
+}
+.section-card{
+    display: flex;
+    flex-direction: row;
+}
+.card-image{
+    padding-top: 10px;
+    text-align: center;
+    margin-bottom: 3px;
+
+}
+.card-text{
+    text-align: center;
+}
+.card:last-child{
+    margin-right: 0px;
+}
+.section-popular__link{
+    text-decoration: none;
+    list-style: none;
+    color: #000;
+    font-weight: 500;
+}
+.section-news{
+    margin-top: 150px;
+}
+.text-header{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 37px;
+    color: #3A5AFF;
+    margin-bottom: 30px;
+}
+.text-subheader{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+}
+.maps{
+    width: 100%;
+    height: 300px;
+}

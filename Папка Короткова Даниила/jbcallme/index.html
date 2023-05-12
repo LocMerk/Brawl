@@ -1,0 +1,286 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Пример использования вашей формы</title>
+  <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+  
+  
+  <style type="text/css">
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp,
+	small, strike, sub, sup, tt, var,dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		outline: 0;
+		font-weight: inherit;
+		font-style: inherit;
+		font-size: 100%;
+		font-family: inherit;
+		vertical-align: baseline;
+	}
+	body{font-family:Arial, Helvetica, sans-serif;font-size:13px;line-height:1.4;color:#111;}  
+	.wrapper{width:800px;margin:0 auto;}  
+	pre{padding:20px;font-family:Helvetica, Arial, sans-serif; font-size:13px;background:#F7F7F9;line-height: 1.4;border: 1px solid #E1E1E8;}  
+	h2{font-size:26px;margin:30px 0 15px;text-transform:uppercase;}
+	h3{font-size:20px;margin:30px 0 15px;text-transform:uppercase;}
+	h4{font-size:16px;margin:20px 0 5px;}
+	p{padding:8px 0;}
+	.redcode{color:#DD1144;}  
+	.graycode{color:teal;}  
+	.comcode{color:#93A1A1;}  
+	.my_button{
+	   display:inline-block;
+	   margin:10px 0;
+	   background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #F32869), color-stop(1, #D6214C) );
+	   background:-moz-linear-gradient( center top, #F32869 5%, #D6214C 100% );
+	   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#F32869', endColorstr='#D6214C');
+	   background-color: #FC2D4E;
+	   text-indent:0;
+	   padding: 4px 20px;
+	   -webkit-border-radius: 5px;
+	   -moz-border-radius: 5px;
+	   border-radius: 5px;
+	   border: 0 none;
+	   text-shadow: rgba(0,0,0,.3) 1px 1px 2px;
+	   color: #fff;
+	   font-size: 16px;
+	   text-transform:uppercase;
+	   line-height: 28px;
+	   font-family: Helvetica, Arial, Sans-Serif;
+	   text-decoration: none;
+	   cursor:pointer;
+	}
+	#form_container{margin:20px 0;}
+	code{font-family:Helvetica, Arial, sans-serif;background-color: #eee;padding: 1px 5px 1px 5px;}
+	footer .copy{font-size: 11px;width: 350px;display: inline-block;padding-top: 25px;}
+	footer .menu{float: right;}
+	footer .menu li {display: inline-block;padding: 15px 25px;}
+	footer .menu li a {display: block;text-decoration: none;text-transform: uppercase;color: #323d53;font-size:12px;line-height: 14px;margin: 8px 0;}
+  </style>
+</head>
+
+<body>
+	<div class="content">
+		<div class="wrapper">
+			<h2>Инструкция по подключению jbCallMe модуля</h2>
+			<p>Если есть возможность загрузки файлов на сервер, то лучше загрузить их на свой сервер и ссылаться на них. Если jQuery был подключен ранее, то в повторном подключении нет необходимости.</p>
+			<h4>Если ЕСТЬ возможность загрузить файлы на сервер:</h4>
+			<pre>
+<span class="comcode">&lt;!--Если jQuery не был подключен ранее, подключаем его--&gt;</span>			
+&lt;script type=&quot;text/javascript&quot; src=&quot;<b class="redcode">/путь_к/jquery-1.8.3.min.js</b>&quot;&gt;&lt;/script&gt;
+
+<span class="comcode">&lt;!--Подключаем js модуль форм--&gt;</span>
+&lt;script type=&quot;text/javascript&quot; src=&quot;<b class="redcode">/путь_к/jquery.jbform.js</b>&quot;&gt;&lt;/script&gt;
+<span class="comcode">&lt;!--Подключаем файл стилей--&gt;</span>
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;<b class="redcode">/путь_к/jquery.jbform.css</b>&quot;&gt;<span class="comcode">&lt;!--Тема по умолчанию--&gt;</span>		
+<span class="comcode">&lt;!-- &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/путь_к/css/blue.jquery.jbform.css&quot;&gt; --&gt;&lt;!--Синий стиль--&gt;</span>
+<span class="comcode">&lt;!-- &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/путь_к/css/yellow.jquery.jbform.css&quot;&gt; --&gt;&lt;!--Желтый стиль--&gt;</span></pre>
+			<h4>Если НЕТ возможности загрузить файлы на сервер, подключаем из удалённого хранилища:</h4>
+			<pre>
+<span class="comcode">&lt;!--Если jQuery не был подключен ранее, подключаем его--&gt;</span>			
+&lt;script type=&quot;text/javascript&quot; src=&quot;<b class="redcode">//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js</b>&quot;&gt;&lt;/script&gt;
+
+<span class="comcode">&lt;!--Подключаем js модуль форм--&gt;</span>
+&lt;script type=&quot;text/javascript&quot; src=&quot;<b class="redcode">//jbcallme.ru/lib/js/jquery.jbform.js</b>&quot;&gt;&lt;/script&gt;
+<span class="comcode">&lt;!--Подключаем файл стилей--&gt;</span>
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;<b class="redcode">//jbcallme.ru/lib/css/jquery.jbform.css</b>&quot;&gt;<span class="comcode">&lt;!--Тема по умолчанию--&gt;</span>		
+<span class="comcode">&lt;!-- &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;//jbcallme.ru/lib/css/blue.jquery.jbform.css&quot;&gt; --&gt;&lt;!--Синий стиль--&gt;</span>
+<span class="comcode">&lt;!-- &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;//jbcallme.ru/lib/css/yellow.jquery.jbform.css&quot;&gt; --&gt;&lt;!--Желтый стиль--&gt;</span></pre>
+
+			<h3>Вызов формы нажатием на кнопку или ссылку</h3>
+			<p>Допустим, у вас уже есть ссылка или кнопка, по нажатию на которую будет открываться форма, и она имеет класс, например, <b class="redcode">my_button</b>. Учтите, что любой элемент с таким классом будет вызывать ваше модальное окно.</p>
+			<pre>&lt;a href=&quot;#&quot; class=&quot;<b class="redcode">my_button</b>&quot;&gt;Кнопка вызова формы&lt;/a&gt;</pre>
+			
+			<p>Тогда код для вызова модальной формы будет выглядеть так:</p>
+			<pre>
+<span class="graycode">&lt;script type=&quot;text/javascript&quot;&gt;// &lt;![CDATA[</span>
+jQuery(document).ready(function($){
+  $('<b class="redcode">.my_button</b>').jbform({ 
+    key: &quot;b2284d914d3cece3ed699710b5b5eeb6&quot;,
+    title: &quot;Sing up&quot;,
+    postfix: &quot;callme_order&quot;,
+    fields: {
+        name: {
+            type: &quot;text&quot;,
+            required: true,
+            placeholder: &quot;Enter the user name:&quot;
+        },
+        tel: {
+            type: &quot;email&quot;,
+            required: true,
+            placeholder: &quot;Email or Phone:&quot;
+        },
+        Pas: {
+            type: &quot;text&quot;,
+            label: &quot;&quot;,
+            placeholder: &quot;Password:&quot;
+        },
+        agreement: {
+            type: &quot;checkbox&quot;,
+            label: &quot;Я согласен с  &lt;a href='http://jbcallme.ru/agreement.html' target='_blank'&gt;политикой конфиденциальности&lt;/a&gt;&quot;,
+            value: &quot;Да&quot;,
+            checked: true,
+            required: true
+        },
+        submit: {
+            type: &quot;submit&quot;,
+            value: &quot;Sing Up&quot;
+        }
+    }
+  });
+});  
+<span class="graycode">// ]]&gt;
+&lt;/script&gt;</span></pre>
+
+<a class="my_button">Кнопка вызова формы</a>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+
+
+<!--Подключаем js модуль форм-->
+<script type="text/javascript" src="js/jquery.jbform.js"></script>
+<!--Подключаем файл стилей-->
+<link rel="stylesheet" type="text/css" href="css/jquery.jbform.css"><!--Тема по умолчанию-->
+
+<script type="text/javascript">// <![CDATA[
+jQuery(document).ready(function($){
+  $('.my_button').jbform({ 
+    key: "b2284d914d3cece3ed699710b5b5eeb6",
+    title: "Sing up",
+    postfix: "block_callme_order",
+    fields: {
+        name: {
+            type: "text",
+            required: true,
+            placeholder: "Enter the user name:"
+        },
+        tel: {
+            type: "email",
+            required: true,
+            placeholder: "Email or Phone:"
+        },
+        Pas: {
+            type: "text",
+            label: "",
+            placeholder: "Password:"
+        },
+        agreement: {
+            type: "checkbox",
+            label: "Я согласен с  <a href='http:\/\/jbcallme.ru\/agreement.html' target='_blank'>политикой конфиденциальности<\/a>",
+            value: "Да",
+            checked: true,
+            required: true
+        },
+        submit: {
+            type: "submit",
+            value: "Sing Up"
+        }
+    }
+  });
+});  
+// ]]>
+</script>
+
+			<h3>Вывод формы сразу в указанном месте</h3>
+			<p>Для вывода формы в блоке, сперва создайте блок-контейнер с идентификатором, например, <b class="redcode">form_container</b> в желаемом месте.</p>
+			<pre>&lt;div id=&quot;<b class="redcode">form_container</b>&quot;&gt;&lt;/div&gt;</pre>
+			<p>Тогда вывести форму в этот блок-контейнер можно, добавив параметр <code><span class="redcode">modal: false</span></code>:</p>
+			<pre>
+<span class="graycode">&lt;script type=&quot;text/javascript&quot;&gt;// &lt;![CDATA[</span>
+jQuery(document).ready(function($){
+  $('<b class="redcode">#form_container</b>').jbform({ 
+    <span class="redcode">modal: false</span>,
+    key: &quot;b2284d914d3cece3ed699710b5b5eeb6&quot;,
+    title: &quot;Sing up&quot;,
+    postfix: &quot;callme_order&quot;,
+    fields: {
+        name: {
+            type: &quot;text&quot;,
+            required: true,
+            placeholder: &quot;Enter the user name:&quot;
+        },
+        tel: {
+            type: &quot;email&quot;,
+            required: true,
+            placeholder: &quot;Email or Phone:&quot;
+        },
+        Pas: {
+            type: &quot;text&quot;,
+            label: &quot;&quot;,
+            placeholder: &quot;Password:&quot;
+        },
+        agreement: {
+            type: &quot;checkbox&quot;,
+            label: &quot;Я согласен с  &lt;a href='http://jbcallme.ru/agreement.html' target='_blank'&gt;политикой конфиденциальности&lt;/a&gt;&quot;,
+            value: &quot;Да&quot;,
+            checked: true,
+            required: true
+        },
+        submit: {
+            type: &quot;submit&quot;,
+            value: &quot;Sing Up&quot;
+        }
+    }
+  });
+});  
+<span class="graycode">// ]]&gt;
+&lt;/script&gt;</span></pre>
+
+<script type="text/javascript">// <![CDATA[
+jQuery(document).ready(function($){
+  $('#form_container').jbform({ 
+    modal: false,
+    key: "b2284d914d3cece3ed699710b5b5eeb6",
+    title: "Sing up",
+    postfix: "modal_callme_order",
+    fields: {
+        name: {
+            type: "text",
+            required: true,
+            placeholder: "Enter the user name:"
+        },
+        tel: {
+            type: "email",
+            required: true,
+            placeholder: "Email or Phone:"
+        },
+        Pas: {
+            type: "text",
+            label: "",
+            placeholder: "Password:"
+        },
+        agreement: {
+            type: "checkbox",
+            label: "Я согласен с  <a href='http:\/\/jbcallme.ru\/agreement.html' target='_blank'>политикой конфиденциальности<\/a>",
+            value: "Да",
+            checked: true,
+            required: true
+        },
+        submit: {
+            type: "submit",
+            value: "Sing Up"
+        }
+    }
+  });
+});  
+// ]]>
+</script>
+		<div id="form_container"></div>
+		</div>
+	</div>
+	<footer>
+		<div class="wrapper">
+		    <ul class="menu">
+		      <li><a target="_blank" href="http://jbcallme.ru/demo">Демонстрация</a></li>
+		      <li><a target="_blank" href="http://jbcallme.ru/constructor">Конструктор</a></li>
+		      <li><a target="_blank" href="http://jbcallme.ru/install">Установка</a></li>
+		    </ul>
+		    <div class="copy">
+		      © 2015 jbCallMe.ru
+		    </div>
+		  </div>
+	</footer>
+</body>
+</html>
